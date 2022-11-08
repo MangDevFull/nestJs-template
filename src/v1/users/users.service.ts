@@ -16,6 +16,6 @@ export class UsersService {
   ) {
   }
   async getUser(){
-      return "haha"
+      return this.usersRepository.find()
   }
 }
