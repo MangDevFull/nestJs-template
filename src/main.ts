@@ -20,10 +20,11 @@ async function bootstrap() {
   });
 
   /* Middleware */
-  app.use(authMiddleware);
+
+  // app.use(authMiddleware);
   
 
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix(`api/${process.env.VERSION}`);
 
   await app.listen(process.env.PORT);
   console.log(`Application is running on: ${await app.getUrl()}`);

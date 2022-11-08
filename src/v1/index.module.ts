@@ -1,16 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
-import { RouterModule } from '@nestjs/core'
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
     AuthModule,
-    RouterModule.register([
-        {
-          path: 'v1',
-          module: AuthModule,
-        },
-      ]),
+    UsersModule,
   ],
   providers: [],
 

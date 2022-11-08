@@ -2,6 +2,7 @@ import { Module, } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 // import { GraphQLModule } from '@nestjs/graphql';
 import { ModuleV1 } from './v1/index.module';
+import { RouterModule } from '@nestjs/core'
 import * as dotenv from 'dotenv';
 
 
@@ -9,15 +10,6 @@ dotenv.config();
 
 @Module({
   imports: [
-    // BullModule.forRoot({
-    //   redis: {
-    //     host: process.env.HOST_REDIS,
-    //     port: parseInt(process.env.PORT_REDIS),
-    //   },
-    // }),
-
-    // TypeOrmModule.forFeature([User, Order, Transaction, Store, Customer, OrderItem, Package, Category, Product, Booking]),
-
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
