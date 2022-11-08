@@ -1,9 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
 
-const constant = ['/api/login', '/api/register', '/api/logout', '/api/login-phone',"/api/get-infor",
-  '/api/check-password', "/services", "/", "/detail", "/api/create-password"
-  , "/api/recover-password", "/api/check-otp", "/api/save-password","/api/save-password-v2"];
+const constant = ['/api/login', '/api/register', '/api/logout'];
 
 export function authMiddleware(req: Request, res: Response, next: NextFunction) {
   try {
