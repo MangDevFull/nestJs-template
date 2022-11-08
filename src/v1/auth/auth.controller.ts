@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
 import { AuthenticationGuard } from './guards/auth.guard';
 import { LocalAuthGuard } from './guards/local.guard';
 import * as helper from '../helpers/response'
-@Controller()
+@Controller('auth')
 export class AuthController {
   constructor(
     // private userService: UsersService,
@@ -31,6 +31,11 @@ export class AuthController {
   @Post('/login')
   async login(@Request() request) {
     return this.authService.login(request.user);
+  }
+
+  @Get('/test')
+  async test() {
+    return { oke: true }
   }
 
   @UseGuards(AuthenticationGuard)

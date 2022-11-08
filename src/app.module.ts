@@ -1,7 +1,7 @@
 import { Module, } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 // import { GraphQLModule } from '@nestjs/graphql';
-import { AuthModule } from './auth/auth.module';
+import { ModuleV1 } from './v1/index.module';
 import * as dotenv from 'dotenv';
 
 
@@ -28,7 +28,7 @@ dotenv.config();
       autoLoadEntities: true,
       synchronize: true,
     }),
-    AuthModule,
+    ModuleV1,
   ],
   providers: [],
 

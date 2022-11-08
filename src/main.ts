@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { authMiddleware } from './middleware/auth.middleware';
+import { authMiddleware } from './v1/middleware/auth.middleware';
 import * as dotenv from 'dotenv';
 dotenv.config();
 

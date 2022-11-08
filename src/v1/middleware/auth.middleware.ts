@@ -1,11 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
 
-const constant = ['/api/login', '/api/register', '/api/logout'];
-
 export function authMiddleware(req: Request, res: Response, next: NextFunction) {
   try {
-    if (constant.indexOf(req.path) !== -1 || req.path.includes("/api/public")) return next();
+    if (req.path.includes(`/api/${process.env.VERSION}/public`) || req.path.includes(`/api/${process.env.VERSION}/auth`)) return next();
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.replace("Bearer ", "");
     if (!token) throw new Error("Unauthorized");
